@@ -1,4 +1,4 @@
-# INF.04 - aplikacje webowe -- konflikty - test#2
+# INF.04 - aplikacje webowe
 
 Repozytorium z zadaniami z przedmiotu.
 
