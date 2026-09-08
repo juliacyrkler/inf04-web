@@ -1,4 +1,4 @@
-# INF.04 - aplikacje webowe
+# INF.04 - aplikacje webowe -- test konfliktu - gałąź
 
 Repozytorium z zadaniami z przedmiotu.
 
