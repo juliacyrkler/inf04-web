@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="pl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wizytówka - Julia Cyrkler</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header class="naglowek">
+        <img src="awatar.png" alt="Awatar: placeholder">
+        <div class="naglowek_tekst">
+            <h1>Julia Cyrkler</h1>
+            <p class="podtytul">Technik programista - klasa 5</p>
+        </div>
+    </header>
+    <main>
+        <section id="o_mnie">
+            <h2>O mnie</h2>
+            <p>
+                Uczę się programowania aplikacji webowych. Najbardziej interesuje mnie front-end, ale chce rozumieć też
+                to, co dzieje się po stronie serwera.
+            </p>
+        </section>
+        <section id="umiejetnosci">
+            <h2>Umiejętności</h2>
+            <ul class="lista-umiejetnosci">
+                <li>HTML - struktura semantyczna, formularze</li>
+                <li>CSS - selektory, box model, flexbox</li>
+                <li>Javascript - DOM, zdarzenia, ES6</li>
+                <li>Git - gałęzie, Pull Request</li>
+            </ul>
+        </section>
+
+        <section id="kontakt">
+            <h2>Kontakt</h2>
+
+            <form id="formularz" novalidate>
+                <div class="pole">
+                    <label for="imie">Imię i naziwsko</label>
+                    <input type="text" name="imie" id="imie">
+                    <p class="blad" id="blad-imie"></p>
+                </div>
+                <div class="pole">
+                    <label for="email">Adres e-mail</label>
+                    <input type="email" name="email" id="email">
+                    <p class="blad" id="blad-email"></p>
+                </div>
+                <div class="pole">
+                    <label for="temat">Temat</label>
+                    <select name="temat" id="temat">
+                        <option value="">-- wybierz temat --</option>
+                        <option value="wspolpraca">Propozycja współpracy</option>
+                        <option value="pytanie">Pytanie o projekt</option>
+                        <option value="inne">Inne</option>
+                    </select>
+                    <p class="blad" id="blad-temat"></p>
+                </div>
+                <div class="pole">
+                    <label for="wiadomosc">Wiadomość</label>
+                    <textarea name="wiadomosc" id="wiadomosc" rows="5"></textarea>
+                    <p class="blad" id="blad-wiadomosc"></p>
+                </div>
+                <button type="submit" class="przycisk">Wyślij wiadomość</button>
+            </form>
+
+            <div id="podziekowanie" class="podziekowanie" hidden>
+                <h3>Dziękuję za wiadomość!</h3>
+                <p id="podziekowanie-tresc"></p>
+            </div>
+        </section>
+    </main>
+    <footer class="stopka">
+        <p>
+            Julia Cyrkler - <a href="https://github.com/juliacyrkler/inf04-web">GitHub</a> -
+            <a href="mailto:julia.cyrkler@gmail.com">julia.cyrkler@gmail.com</a>
+        </p>
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+
+</html>
