@@ -7,7 +7,7 @@ var kursy = [
 
 function nazwyAktywnych(tablica) {
     var wynik = [];
-    for(var i = 0; i < tablica.lenght; i++) {
+    for(var i = 0; i < tablica.length; i++) {
         if(tablica[i].aktywny === true) {
             wynik.push(tablica[i].nazwa);
         }
@@ -17,12 +17,12 @@ function nazwyAktywnych(tablica) {
 
 function sumaGodzin(tablica) {
     var suma = 0;
-    for(var i = 0; i < tablica.lenght; i++) {
+    for(var i = 0; i < tablica.length; i++) {
         suma = suma + tablica[i].godziny;
     }
     return suma;
 }
 
 function opis(kurs) {
-    return "Kurs " + kurs.nazwa + " trwa " + kurs.godziny + "godzin.";
+    return "Kurs " + kurs.nazwa + " trwa " + kurs.godziny + " godzin";
 }
