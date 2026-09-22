@@ -26,7 +26,7 @@ function FiltersOffcanvas() {
                     <label htmlFor="filtrMiasto" className="form-check-label">Miasto</label>
                 </div>
 
-                <button type="button" className="btn btn-primary w-100 mt-4" data-bs-dismiss="canvas">Zamknij</button>
+                <button type="button" className="btn btn-primary w-100 mt-4" data-bs-dismiss="offcanvas">Zamknij</button>
             </div>
         </div>
     )

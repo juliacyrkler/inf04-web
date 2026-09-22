@@ -1,7 +1,7 @@
 const NAZWA_KATEGORII = { gory: "Góry", morze: "Morze", miasto: "Miasto" }
 const KOLOR_KATEGORII = { gory: "success", morze: "primary", miasto: "dark" }
 
-function PhotoCard({ title, description, category, image, alt }) {
+function PhotoCard({ id, title, description, category, image, alt }) {
     return (
         <div className="card h-100 shadow-sm">
             <img src={image} alt={alt} className="card-img-top" />
@@ -15,6 +15,10 @@ function PhotoCard({ title, description, category, image, alt }) {
                 <p className="card-text text-body-secondary">
                     {description}
                 </p>
+                <button type="button"
+                    className="btn btn-outline-primary mt-auto"
+                    data-bs-toggle="modal"
+                    data-bs-target={`#zdjecie${id}`}>Powiększ</button>
             </div>
         </div>
     )
