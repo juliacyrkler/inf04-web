@@ -16,3 +16,5 @@ Repozytorium z zadaniami z przedmiotu.
 2. Działania na nowej gałęzi.
 3. Po zakończeniu działań - `git push`.
 4. Na GitHubie - otworzenie Pull Request, wypełnienie pól z tytułem i opisem i merge.
+
+**Note:** przez zły `git config` commity dokonane są pod inną nazwą użytkownika 
