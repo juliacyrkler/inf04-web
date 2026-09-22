@@ -59,7 +59,7 @@ function AddPhotoModal() {
 
                     <div className="modal-footer">
                         <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Anuluj</button>
-                        <button type="submit" className="bnt btn-primary">Zapisz</button>
+                        <button type="submit" className="btn btn-primary">Zapisz</button>
                     </div>
                 </div>
             </div>
