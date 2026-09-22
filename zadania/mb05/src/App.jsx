@@ -1,13 +1,8 @@
-import { useState } from 'react'
-import './App.css'
-
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      
-    </>
+    <div class="container mt-4">
+      <h1>Galeria zdjęć</h1>
+    </div>
   )
 }
 
