@@ -1,21 +1,32 @@
-function CategoryBar() {
+const KATEGORIE = [
+    { value: 'gory', label: 'Góry' },
+    { value: 'morze', label: 'Morze' },
+    { value: 'miasto', label: 'Miasto' }
+]
+
+function CategoryBar({ aktywna, onWybierz }) {
     return (
         <div id="kategorie" className="d-flex flex-wrap gap-2 mb-4">
             <button
                 type="button"
-                aria-pressed="true"
-                className="btn btn-outline-primary active">
+                onClick={() => onWybierz('wszystkie')}
+                aria-pressed={aktywna === 'wszystkie'}
+                className={`btn btn-outline-primary ${aktywna === 'wszystkie' ? 'active' : ''}`}>
                 Wszystkie
             </button>
-            <button className="btn btn-outline-primary" type="button">
-                Góry
-            </button>
-            <button className="btn btn-outline-primary" type="button">
-                Morze
-            </button>
-            <button className="btn btn-outline-primary" type="button">
-                Miasto
-            </button>
+
+            {
+                KATEGORIE.map(kategoria => (
+                    <button
+                        key={kategoria.value}
+                        type="button"
+                        onClick={() => onWybierz(kategoria.value)}
+                        aria-pressed={aktywna === kategoria.value}
+                        className={`btn btn-outline-primary ${aktywna === kategoria.value ? 'active' : ''}`}>
+                        {kategoria.label}
+                    </button>
+                ))
+            }
         </div>
     )
 }
