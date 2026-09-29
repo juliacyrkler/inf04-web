@@ -1,7 +1,7 @@
 const NAZWA_KATEGORII = { gory: "Góry", morze: "Morze", miasto: "Miasto" }
 const KOLOR_KATEGORII = { gory: "success", morze: "primary", miasto: "dark" }
 
-function PhotoCard({ id, title, description, category, image, alt }) {
+function PhotoCard({ id, title, description, category, image, alt, onUsun }) {
     return (
         <div className="card h-100 shadow-sm">
             <img src={image} alt={alt} className="card-img-top" />
@@ -15,10 +15,16 @@ function PhotoCard({ id, title, description, category, image, alt }) {
                 <p className="card-text text-body-secondary">
                     {description}
                 </p>
-                <button type="button"
-                    className="btn btn-outline-primary mt-auto"
-                    data-bs-toggle="modal"
-                    data-bs-target={`#zdjecie${id}`}>Powiększ</button>
+                <div className="d-flex mt-auto gap-2">
+                    <button type="button"
+                        className="btn btn-outline-primary"
+                        data-bs-toggle="modal"
+                        data-bs-target={`#zdjecie${id}`}>Powiększ</button>
+                    <button type="button"
+                        className="btn btn-outline-danger"
+                        onClick={onUsun}
+                    >Usuń</button>
+                </div>
             </div>
         </div>
     )
