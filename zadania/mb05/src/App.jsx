@@ -53,5 +53,3 @@ function App() {
 }
 
 export default App
-
-//test - wyświetlenie prawidłowego usera na githubie
