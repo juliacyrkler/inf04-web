@@ -23,6 +23,14 @@ function App() {
     setZdjecia([...zdjecia, { ...nowe, id: noweId, favourite: false }])
   }
 
+  function przelaczUlubione(id) {
+    setZdjecia(
+      zdjecia.map(z => (
+        z.id === id ? { ...z, favourite: !z.favourite } : z
+      ))
+    )
+  }
+
   return (
     <>
       <Navbar />
@@ -68,7 +76,7 @@ function App() {
           </div>
         )}
 
-        <Gallery zdjecia={widoczne} onUsun={usunZdjecie} />
+        <Gallery zdjecia={widoczne} onUsun={usunZdjecie} onPrzelacz={przelaczUlubione} />
       </main>
 
       <Footer />
