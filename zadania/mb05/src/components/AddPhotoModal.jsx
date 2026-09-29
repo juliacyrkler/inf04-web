@@ -105,12 +105,12 @@ function AddPhotoModal({ onDodaj }) {
                                 </div>
                             </div>
                         </div>
-                    </form>
 
-                    <div className="modal-footer">
-                        <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Anuluj</button>
-                        <button type="submit" className="btn btn-primary">Zapisz</button>
-                    </div>
+                        <div className="modal-footer">
+                            <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Anuluj</button>
+                            <button type="submit" className="btn btn-primary">Zapisz</button>
+                        </div>
+                    </form>
                 </div>
             </div>
         </div >

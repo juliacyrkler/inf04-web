@@ -18,6 +18,11 @@ function App() {
     setZdjecia(zdjecia.filter(z => z.id !== id))
   }
 
+  function dodajZdjecie(nowe) {
+    const noweId = Math.max(...zdjecia.map(z => z.id)) + 1
+    setZdjecia([...zdjecia, { ...nowe, id: noweId, favourite: false }])
+  }
+
   return (
     <>
       <Navbar />
