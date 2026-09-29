@@ -1,4 +1,14 @@
-function FiltersOffcanvas() {
+const KATEGORIE = [
+    { value: 'gory', label: 'Góry' },
+    { value: 'morze', label: 'Morze' },
+    { value: 'miasto', label: 'Miasto' }
+]
+
+function FiltersOffcanvas({ aktywna, onWybierz }) {
+    function przelacz(kategoria) {
+        onWybierz(aktywna === kategoria ? 'wszystkie' : kategoria)
+    }
+
     return (
         <div className="offcanvas offcanvas-start"
             tabIndex={-1}
@@ -13,18 +23,17 @@ function FiltersOffcanvas() {
             <div className="offcanvas-body">
                 <p className="text-body-secondary">Zaznacz kategorie, które chcesz zobaczyć:</p>
 
-                <div className="form-check">
-                    <input type="checkbox" id="filtrGory" className="form-check-input" defaultChecked />
-                    <label htmlFor="filtrGory" className="form-check-label">Góry</label>
-                </div>
-                <div className="form-check">
-                    <input type="checkbox" id="filtrMorze" className="form-check-input" defaultChecked />
-                    <label htmlFor="filtrMorze" className="form-check-label">Morze</label>
-                </div>
-                <div className="form-check">
-                    <input type="checkbox" id="filtrMiasto" className="form-check-input" defaultChecked />
-                    <label htmlFor="filtrMiasto" className="form-check-label">Miasto</label>
-                </div>
+                {KATEGORIE.map(kategoria => (
+                    <div className="form-check" key={kategoria.value}>
+                        <input
+                            type="checkbox"
+                            id={`filtr-${kategoria.value}`}
+                            className="form-check-input"
+                            checked={aktywna === kategoria.value || aktywna === 'wszystkie'}
+                            onChange={() => przelacz(kategoria.value)} />
+                        <label htmlFor={`filtr-${kategoria.value}`} className="form-check-label">{kategoria.label}</label>
+                    </div>
+                ))}
 
                 <button type="button" className="btn btn-primary w-100 mt-4" data-bs-dismiss="offcanvas">Zamknij</button>
             </div>
