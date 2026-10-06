@@ -12,6 +12,7 @@ function App() {
   const numerKursuRef = useRef(null)
   const [szukaj, setSzukaj] = useState('')
   const [rosnaco, setRosnaco] = useState(true)
+  const [status, setStatus] = useState(null)
 
   const widoczne = kursy
     .map((kurs, index) => ({ kurs, numer: index + 1 }))
@@ -29,8 +30,14 @@ function App() {
 
     console.log(imieNazwisko)
 
-    if (kurs !== undefined) console.log(kurs)
-    else console.log("Nieprawidłowy numer kursu")
+    if (kurs !== undefined) {
+      console.log(kurs)
+      setStatus({ typ: 'sukces', tresc: `${imieNazwisko} zapisany(-a) na kurs: ${kurs}` })
+    }
+    else {
+      console.log("Nieprawidłowy numer kursu")
+      setStatus({ typ: 'blad', tresc: 'Nieprawidłowy numer kursu' })
+    }
   }
 
   return (
@@ -67,6 +74,9 @@ function App() {
           <button className="btn btn-primary" type="submit">Zapisz do kursu</button>
         </div>
       </form>
+      {status && (
+        <div className={`alert alert-${status.typ === 'sukces' ? 'success' : 'danger'}`} >{status.tresc}</div>
+      )}
     </div>
   )
 }
