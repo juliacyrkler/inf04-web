@@ -5,11 +5,10 @@ import Gallery from './components/Gallery.jsx'
 import Footer from './components/Footer.jsx'
 import AddPhotoModal from './components/AddPhotoModal.jsx'
 import FiltersOffcanvas from './components/FiltersOffcanvas.jsx'
-import photos from './data/photos.json'
 import './App.css'
 
 function App() {
-  const [zdjecia, setZdjecia] = useState(photos)
+  const [zdjecia, setZdjecia] = useState([])
   const [aktywnaKategoria, setAktywnaKategoria] = useState('wszystkie')
 
   const widoczne = aktywnaKategoria === 'wszystkie' ? zdjecia : zdjecia.filter(z => z.category === aktywnaKategoria)
