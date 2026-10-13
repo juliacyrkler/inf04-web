@@ -40,8 +40,8 @@ function App() {
       <h1>Liczba gier planszowych: {gry.length}</h1>
       <ol>
         {
-          gry.map((gra, index) => (
-            <Pozycja key={index} nazwa={gra} />
+          gry.map((nazwa, index) => (
+            <Pozycja key={index} nazwa={nazwa} />
           ))
         }
       </ol>
