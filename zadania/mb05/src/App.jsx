@@ -116,11 +116,11 @@ function App() {
         <Gallery zdjecia={widoczne} onUsun={usunZdjecie} onPrzelacz={przelaczUlubione} />
       </main>
 
-      <Footer />
-
       <AddPhotoModal onDodaj={dodajZdjecie} />
       <FiltersOffcanvas aktywna={aktywnaKategoria} onWybierz={setAktywnaKategoria} />
       <ZdjecieDnia />
+
+      <Footer />
     </>
   )
 }
