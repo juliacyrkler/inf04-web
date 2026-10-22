@@ -1,8 +1,8 @@
 import { Outlet, Link, NavLink } from "react-router-dom"
 import Footer from "./Footer"
 
-function Layout() {
-    retrn (
+export default function Layout() {
+    return (
         <>
             <nav className="navbar navbar-expand bg-body-tertiary border-bottom">
                 <div className="container">
@@ -12,7 +12,7 @@ function Layout() {
                             <NavLink className="nav-link" to="/" end>Galeria</NavLink>
                         </li>
                         <li className="nav-item">
-                            <NavLink className="nav-link" to="/dodaj">Dodak zdjęcie</NavLink>
+                            <NavLink className="nav-link" to="/dodaj">Dodaj zdjęcie</NavLink>
                         </li>
                     </ul>
                 </div>

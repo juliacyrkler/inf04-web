@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 const NAZWA_KATEGORII = { gory: "Góry", morze: "Morze", miasto: "Miasto" }
 const KOLOR_KATEGORII = { gory: "success", morze: "primary", miasto: "dark" }
 
-function PhotoCard({ id, title, description, category, image, alt, favourite, onUsun, onPrzelacz }) {
+function PhotoCard({ id, title, description, category, image, alt, favorite, onUsun, onPrzelacz }) {
     return (
         <div className="card h-100 shadow-sm">
             <img src={image} alt={alt} className="card-img-top" />
@@ -13,10 +13,10 @@ function PhotoCard({ id, title, description, category, image, alt, favourite, on
                     <button className="btn btn-link p-0 fs-4 lh-1"
                         type="button"
                         onClick={onPrzelacz}
-                        aria-label={favourite ? "Usuń z ulubionych" : "Dodaj do ulubionych"}
-                        aria-pressed={favourite}>
+                        aria-label={favorite ? "Usuń z ulubionych" : "Dodaj do ulubionych"}
+                        aria-pressed={favorite}>
                         {
-                            favourite ? (<i className="bi bi-star-fill text-warning" />) : (<i className="bi bi-star" />)
+                            favorite ? <i className="bi bi-star-fill text-warning" /> : <i className="bi bi-star" />
                         }
                     </button>
                 </div>
