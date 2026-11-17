@@ -1,20 +1,29 @@
-# INF.04 - aplikacje webowe
+# Galeria zdjęć
 
-Repozytorium z zadaniami z przedmiotu.
+Prosta aplikacja w React do przeglądania, filtrowania i dodawania zdjęć z kategoriami oraz stroną szczegółów każdego zdjęcia. Dane pobierane z pliku JSON przez `fetch`.
 
-**Autor:** Julia Cyrkler, 5p1t
+## Funkcjonalności
 
-## Stos technologii:
+- przeglądanie galerii z filtrem po kategorii
+- strona szczegółów pojedynczego zdjęcia (`/zdjecie/:id`)
+- dodawanie nowego zdjęcia przez formularz (`/dodaj`)
+- obsługa stanu ładowania i błędu przy pobieraniu danych
 
-**React** - framework używany do tworzenia aplikacji webpwych przy użyciu komponentów.
+## Uruchomienie
 
-**Bootstrap** - biblioteka stylów CSS ułatwiająca tworzenie stron internetowych.
+```bash
+npm install
+npm run dev
+```
 
-## Oddawanie zadań:
+Aplikacja działa pod 'hhtp://localhost:5173'
 
-1. Utworzenie gałęzi - `git switch -c inf04-mbnn`
-2. Działania na nowej gałęzi.
-3. Po zakończeniu działań - `git push`.
-4. Na GitHubie - otworzenie Pull Request, wypełnienie pól z tytułem i opisem i merge.
+## Struktura projketu
 
-**Note:** przez zły `git config` commity dokonane są pod inną nazwą użytkownika, wszystkie zmiany były dokonane przez Julię Cyrkler
+- `src/components/` - komponenty wielokrotnego użytku (karty, pasek kategorii)
+- `src/pages/` - strony podpięte pod routing (`GaleriaPage`, `DodajPage`, `SzcegolyPage`)
+- `src/services/` - warstwa komunikacji z danymi (`zdjecia.js`)
+
+## Technologie
+
+React, React Router, Bootstrap, Vite.
