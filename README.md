@@ -16,7 +16,7 @@ npm install
 npm run dev
 ```
 
-Aplikacja działa pod 'hhtp://localhost:5173'
+Aplikacja działa pod 'http://localhost:5173'
 
 ## Struktura projketu
 
