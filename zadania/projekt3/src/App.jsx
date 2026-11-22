@@ -25,6 +25,10 @@ function App() {
 
   const widoczne = rowery.filter(r => r.model.toLowerCase().includes(szukaj.toLowerCase()))
 
+  function usun(id){
+    setRowery(rowery.filter(r => r.id !== id))
+  }
+
   if(loading){
     return (
       <div className="container mt-4">
@@ -50,6 +54,7 @@ function App() {
     )
   }
 
+
   return (
     <div className="container mt-4">
       <h1>Wypożyczalnia rowerów</h1>
@@ -63,10 +68,13 @@ function App() {
       <div className="row g-3">
         {widoczne.map(rower => (
           <div className="col-12 col-md-6" key={rower.id}>
-            <div className="card h-100">
+            <div className={`card h-100${rower.dostepny ? '' : ' opacity-50'}`}>
               <div className="card-body">
                 <h3 className="card-title h5">{rower.model}</h3>
-                <span className="badge text-bg-secondary">{rower.typ}</span>
+                <span className="badge text-bg-secondary mb-3">{rower.typ}</span>
+                <div>
+                  <button className="btn btn-outline-danger btn-sm" type='button' onClick={() => usun(rower.id)}>Usuń</button>
+                </div>
               </div>
             </div>
           </div>
