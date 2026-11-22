@@ -5,6 +5,7 @@ function App() {
   const [rowery, setRowery] = useState([])
   const [loading, setLoading] = useState(true)
   const [error, setError] = useState(null)
+  const [szukaj, setSzukaj] = useState('')
 
   useEffect(() => {
     async function wczytaj() {
@@ -22,12 +23,45 @@ function App() {
     wczytaj()
   },[])
 
+  const widoczne = rowery.filter(r => r.model.toLowerCase().includes(szukaj.toLowerCase()))
+
+  if(loading){
+    return (
+      <div className="container mt-4">
+        <div className="spinner-border" role='status'/>
+        <span className="ms-2">Ładowanie...</span>
+      </div>
+    )
+  }
+
+  if(error) {
+    return (
+      <div className="container mt-4">
+        <div className="alert alert-danger">{error}</div>
+      </div>
+    )
+  }
+
+  if(rowery.length === 0) {
+    return (
+      <div className="container mt-4">
+        <div className="alert alert-secondarys">Brak rowerów.</div>
+      </div>
+    )
+  }
+
   return (
     <div className="container mt-4">
       <h1>Wypożyczalnia rowerów</h1>
     
+      <input type="text" className='form-control mb-3' placeholder='Szukaj po modelu...' value={szukaj} onChange={event => setSzukaj(event.target.value)} />
+
+      {
+        widoczne.length === 0 && <div className="alert alert-secondary">Brak wyników</div>
+      }
+
       <div className="row g-3">
-        {rowery.map(rower => (
+        {widoczne.map(rower => (
           <div className="col-12 col-md-6" key={rower.id}>
             <div className="card h-100">
               <div className="card-body">
